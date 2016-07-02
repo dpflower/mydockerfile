@@ -22,3 +22,9 @@ CMD ["/bin/bash"]
 
 
 
+docker run --name redis -d -v /var/docker/redis:/data redis redis-server --appendonly yes 
+
+docker run --name mysql -p 3306:3306 -d -P -e mysqld -e MYSQL_ROOT_PASSWORD=820425 -e MYSQL_USER=dp -e MYSQL_PASSWORD=820425 -e MYSQL_DATABASE=test -v /var/mysql_data:/var/lib/mysql mysql
+
+
+docker run -i -t -p 8080:8080 -v /root:/data --name dubboAdmin1 tomcat /bin/bash
